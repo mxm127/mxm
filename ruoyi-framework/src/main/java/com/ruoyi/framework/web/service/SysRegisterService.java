@@ -50,7 +50,6 @@ public class SysRegisterService
         {
             validateCaptcha(username, registerBody.getCode(), registerBody.getUuid());
         }
-
         if (StringUtils.isEmpty(username))
         {
             msg = "用户名不能为空";
