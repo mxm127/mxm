@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ScoreMapper">
+    
+    <resultMap type="Score" id="ScoreResult">
+        <result property="id"    column="id"    />
+        <result property="adjudicatorId"    column="adjudicator_id"    />
+        <result property="adjudicator"    column="adjudicator"    />
+        <result property="itemId"    column="item_id"    />
+        <result property="dimension1"    column="dimension1"    />
+        <result property="dimension2"    column="dimension2"    />
+        <result property="dimension3"    column="dimension3"    />
+        <result property="dimension4"    column="dimension4"    />
+        <result property="comments"    column="comments"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="total"    column="total"    />
+        <result property="dimension5"    column="dimension5"    />
+        <result property="dimension6"    column="dimension6"    />
+    </resultMap>
+
+    <resultMap type="ScoreVO" id="ScoreVOResult">
+        <result property="id"    column="id"    />
+        <result property="adjudicatorId"    column="adjudicator_id"    />
+        <result property="adjudicator"    column="adjudicator"    />
+        <result property="itemId"    column="item_id"    />
+        <result property="dimension1"    column="dimension1"    />
+        <result property="dimension2"    column="dimension2"    />
+        <result property="dimension3"    column="dimension3"    />
+        <result property="dimension4"    column="dimension4"    />
+        <result property="comments"    column="comments"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="total"    column="total"    />
+        <result property="dimension5"    column="dimension5"    />
+        <result property="dimension6"    column="dimension6"    />
+        <result property="title" column="title"/>
+        <result property="classType" column="class_type"/>
+    </resultMap>
+
+    <sql id="selectScoreVo">
+        select id, adjudicator_id, adjudicator, item_id, dimension1, dimension2, dimension3, dimension4, comments, create_time, total, dimension5, dimension6 from sys_score
+    </sql>
+
+<!--    <select id="selectScoreList" parameterType="ScoreDTO" resultMap="ScoreResult">-->
+<!--        select-->
+<!--        <where>  -->
+<!--            <if test="id != null "> and id = #{id}</if>-->
+<!--            <if test="adjudicatorId != null "> and adjudicator_id = #{adjudicatorId}</if>-->
+<!--            <if test="adjudicator != null  and adjudicator != ''"> and adjudicator = #{adjudicator}</if>-->
+<!--            <if test="itemId != null "> and item_id = #{itemId}</if>-->
+<!--            <if test="dimension1 != null "> and dimension1 = #{dimension1}</if>-->
+<!--            <if test="dimension2 != null "> and dimension2 = #{dimension2}</if>-->
+<!--            <if test="dimension3 != null "> and dimension3 = #{dimension3}</if>-->
+<!--            <if test="dimension4 != null "> and dimension4 = #{dimension4}</if>-->
+<!--            <if test="comments != null  and comments != ''"> and comments = #{comments}</if>-->
+<!--            <if test="total != null "> and total = #{total}</if>-->
+<!--            <if test="dimension5 != null "> and dimension5 = #{dimension5}</if>-->
+<!--            <if test="dimension6 != null "> and dimension6 = #{dimension6}</if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+    <select id="selectScoreList" parameterType="ScoreDTO" resultMap="ScoreVOResult">
+        select s.* , i.title,i.class_type from sys_score as s , sys_items as i
+        <where>
+            <if test="adjudicatorId != null ">and s.adjudicator_id = #{adjudicatorId}</if>
+            <if test="adjudicator != null  and adjudicator != ''">and s.adjudicator like concat('%', #{adjudicator}, '%')</if>
+            <if test="school != null  and school != ''">and i.school like concat('%', #{school}, '%')</if>
+            <if test="nickName != null ">and i.teacher = concat('%', #{teacher}, '%')</if>
+            <if test="classType != null ">and i.class_type = concat('%', #{classType}, '%')</if>
+            <if test="status != null">and i.status = #{status}</if>
+            and s.item_id = i.item_id
+        </where>
+    </select>
+    
+    <select id="selectScoreById" parameterType="Long" resultMap="ScoreResult">
+        <include refid="selectScoreVo"/>
+        where item_id = #{itemId}
+    </select>
+        
+    <insert id="insertScore" parameterType="Score" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_score
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="adjudicatorId != null">adjudicator_id,</if>
+            <if test="adjudicator != null and adjudicator != ''">adjudicator,</if>
+            <if test="itemId != null">item_id,</if>
+            <if test="dimension1 != null">dimension1,</if>
+            <if test="dimension2 != null">dimension2,</if>
+            <if test="dimension3 != null">dimension3,</if>
+            <if test="dimension4 != null">dimension4,</if>
+            <if test="comments != null">comments,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="total != null">total,</if>
+            <if test="dimension5 != null">dimension5,</if>
+            <if test="dimension6 != null">dimension6,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="adjudicatorId != null">#{adjudicatorId},</if>
+            <if test="adjudicator != null and adjudicator != ''">#{adjudicator},</if>
+            <if test="itemId != null">#{itemId},</if>
+            <if test="dimension1 != null">#{dimension1},</if>
+            <if test="dimension2 != null">#{dimension2},</if>
+            <if test="dimension3 != null">#{dimension3},</if>
+            <if test="dimension4 != null">#{dimension4},</if>
+            <if test="comments != null">#{comments},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="total != null">#{total},</if>
+            <if test="dimension5 != null">#{dimension5},</if>
+            <if test="dimension6 != null">#{dimension6},</if>
+         </trim>
+    </insert>
+
+    <update id="updateScore" parameterType="Score">
+        update sys_score
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="adjudicatorId != null">adjudicator_id = #{adjudicatorId},</if>
+            <if test="adjudicator != null and adjudicator != ''">adjudicator = #{adjudicator},</if>
+            <if test="itemId != null">item_id = #{itemId},</if>
+            <if test="dimension1 != null">dimension1 = #{dimension1},</if>
+            <if test="dimension2 != null">dimension2 = #{dimension2},</if>
+            <if test="dimension3 != null">dimension3 = #{dimension3},</if>
+            <if test="dimension4 != null">dimension4 = #{dimension4},</if>
+            <if test="comments != null">comments = #{comments},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="total != null">total = #{total},</if>
+            <if test="dimension5 != null">dimension5 = #{dimension5},</if>
+            <if test="dimension6 != null">dimension6 = #{dimension6},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteScoreById" parameterType="Long">
+        delete from sys_score where id = #{id}
+    </delete>
+
+    <delete id="deleteScoreByIds" parameterType="String">
+        delete from sys_score where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
