@@ -1,14 +1,15 @@
-package com.ruoyi.system.domain.dto;
+package com.ruoyi.system.domain.vo;
 
 import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.entity.SysUser;
 
-public class DsUserDTO {
+public class DsUserVO {
+    private static final long serialVersionUID = 1L;
+
     /** $column.columnComment */
     private Long id;
 
     /** 是否阅读须知 */
-    @Excel(name = "是否阅读须知")
     private String readFlag;
 
     /** 学校名称 */
@@ -19,19 +20,26 @@ public class DsUserDTO {
     @Excel(name = "用户类型")
     private String userType;
 
-    /** 名称 */
-    @Excel(name = "名称")
+    /** 教师姓名 */
+    @Excel(name = "教师姓名")
     private String nickName;
 
-    /** 关联主键 */
-    @Excel(name = "关联主键")
+    /** 用户id */
+    @Excel(name = "用户id")
     private Long userId;
 
-    /** 参赛组别 */
-    @Excel(name = "参赛组别")
     private String approveType;
 
+    public String getApproveType() {
+        return approveType;
+    }
+
+    public void setApproveType(String approveType) {
+        this.approveType = approveType;
+    }
+
     private SysUser sysUser;
+
     public Long getId() {
         return id;
     }
@@ -80,14 +88,6 @@ public class DsUserDTO {
         this.userId = userId;
     }
 
-    public String getApproveType() {
-        return approveType;
-    }
-
-    public void setApproveType(String approveType) {
-        this.approveType = approveType;
-    }
-
     public SysUser getSysUser() {
         return sysUser;
     }
@@ -95,6 +95,4 @@ public class DsUserDTO {
     public void setSysUser(SysUser sysUser) {
         this.sysUser = sysUser;
     }
-
-
 }

@@ -6,12 +6,12 @@ import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * DsUser对象 sys_ds_user
+ * user对象 sys_ds_user
  * 
- * @author mxm
- * @date 2024-06-01
+ * @author ruoyi
+ * @date 2024-05-31
  */
-public class DsUser extends BaseEntity
+public class SysDsUser extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
@@ -19,7 +19,6 @@ public class DsUser extends BaseEntity
     private Long id;
 
     /** 是否阅读须知 */
-    @Excel(name = "是否阅读须知")
     private String readFlag;
 
     /** 学校名称 */
@@ -30,17 +29,13 @@ public class DsUser extends BaseEntity
     @Excel(name = "用户类型")
     private String userType;
 
-    /** 名称 */
-    @Excel(name = "名称")
+    /** 教师姓名 */
+    @Excel(name = "教师姓名")
     private String nickName;
 
-    /** 关联主键 */
-    @Excel(name = "关联主键")
-    private Long userId;
-
-    /** 参赛组别 */
-    @Excel(name = "参赛组别")
-    private String approveType;
+    /** 用户id */
+    @Excel(name = "用户id")
+    private String userId;
 
     public void setId(Long id) 
     {
@@ -87,23 +82,14 @@ public class DsUser extends BaseEntity
     {
         return nickName;
     }
-    public void setUserId(Long userId)
+    public void setUserId(String userId) 
     {
         this.userId = userId;
     }
 
-    public Long getUserId()
+    public String getUserId() 
     {
         return userId;
-    }
-    public void setApproveType(String approveType) 
-    {
-        this.approveType = approveType;
-    }
-
-    public String getApproveType() 
-    {
-        return approveType;
     }
 
     @Override
@@ -115,7 +101,6 @@ public class DsUser extends BaseEntity
             .append("userType", getUserType())
             .append("nickName", getNickName())
             .append("userId", getUserId())
-            .append("approveType", getApproveType())
             .toString();
     }
 }

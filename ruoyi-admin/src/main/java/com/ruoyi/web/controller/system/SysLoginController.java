@@ -3,6 +3,8 @@ package com.ruoyi.web.controller.system;
 import java.util.List;
 import java.util.Set;
 
+import com.ruoyi.system.domain.DsUser;
+import com.ruoyi.system.service.IDsUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +36,9 @@ public class SysLoginController
 
     @Autowired
     private SysPermissionService permissionService;
+
+    @Autowired
+    private IDsUserService dsUserService;
 
 
 
@@ -68,10 +73,11 @@ public class SysLoginController
         Set<String> roles = permissionService.getRolePermission(user);
         // 权限集合
         Set<String> permissions = permissionService.getMenuPermission(user);
-
+        DsUser dsUser = dsUserService.selectDsUserByUserId(user.getUserId());
         AjaxResult ajax = AjaxResult.success();
         ajax.put("user", user);
         ajax.put("roles", roles);
+        ajax.put("dsUser",dsUser);
         ajax.put("permissions", permissions);
         return ajax;
     }

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.DsUserMapper">
+    
+    <resultMap type="DsUserVO" id="DsUserResult">
+        <result property="id"    column="id"    />
+        <result property="readFlag"    column="read_flag"    />
+        <result property="schoolName"    column="school_name"    />
+        <result property="userType"    column="user_type"    />
+        <result property="nickName"    column="nick_name"    />
+        <result property="userId"    column="user_id"    />
+        <result property="approveType"    column="approve_type"    />
+    </resultMap>
+    <resultMap id="DsUser" type="DsUser">
+        <result property="id"    column="id"    />
+        <result property="readFlag"    column="read_flag"    />
+        <result property="schoolName"    column="school_name"    />
+        <result property="userType"    column="user_type"    />
+        <result property="nickName"    column="nick_name"    />
+        <result property="userId"    column="user_id"    />
+        <result property="approveType"    column="approve_type"    />
+    </resultMap>
+
+    <sql id="selectDsUserVo">
+        select id, read_flag, school_name, user_type, nick_name, user_id, approve_type from sys_ds_user
+    </sql>
+
+    <select id="selectDsUserList" parameterType="DsUserDTO" resultMap="DsUserResult">
+        <include refid="selectDsUserVo"/>
+        <where>  
+            <if test="id != null "> and id = #{id}</if>
+            <if test="readFlag != null  and readFlag != ''"> and read_flag = #{readFlag}</if>
+            <if test="schoolName != null  and schoolName != ''"> and school_name like concat('%', #{schoolName}, '%')</if>
+            <if test="userType != null  and userType != ''"> and user_type = #{userType}</if>
+            <if test="nickName != null  and nickName != ''"> and nick_name like concat('%', #{nickName}, '%')</if>
+            <if test="userId != null  and userId != ''"> and user_id = #{userId}</if>
+            <if test="approveType != null  and approveType != ''"> and approve_type = #{approveType}</if>
+        </where>
+    </select>
+
+<!--    undo-->
+    <select id="selectDsUserByUserId" resultMap="DsUser">
+        select * from sys_ds_user
+        where user_id = #{userId}
+    </select>
+    <select id="selectDsUserById" resultMap="DsUserResult">
+        select * from sys_ds_user
+        where id = #{id}
+    </select>
+
+
+    <insert id="insertDsUser" parameterType="DsUser" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_ds_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="readFlag != null and readFlag != ''">read_flag,</if>
+            <if test="schoolName != null and schoolName != ''">school_name,</if>
+            <if test="userType != null and userType != ''">user_type,</if>
+            <if test="nickName != null and nickName != ''">nick_name,</if>
+            <if test="userId != null and userId != ''">user_id,</if>
+            <if test="approveType != null and approveType != ''">approve_type,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="readFlag != null and readFlag != ''">#{readFlag},</if>
+            <if test="schoolName != null and schoolName != ''">#{schoolName},</if>
+            <if test="userType != null and userType != ''">#{userType},</if>
+            <if test="nickName != null and nickName != ''">#{nickName},</if>
+            <if test="userId != null and userId != ''">#{userId},</if>
+            <if test="approveType != null and approveType != ''">#{approveType},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDsUser" parameterType="DsUser">
+        update sys_ds_user a
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="readFlag != null and readFlag != ''">read_flag = #{readFlag},</if>
+            <if test="schoolName != null and schoolName != ''">school_name = #{schoolName},</if>
+            <if test="userType != null and userType != ''">user_type = #{userType},</if>
+            <if test="nickName != null and nickName != ''">nick_name = #{nickName},</if>
+            <if test="userId != null and userId != ''">user_id = #{userId},</if>
+            <if test="approveType != null and approveType != ''">approve_type = #{approveType},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDsUserById" parameterType="Long">
+        delete from sys_ds_user a,sys_user b where id = #{id} and a.user_id = b.user_id
+    </delete>
+
+    <delete id="deleteDsUserByIds" parameterType="String">
+        delete from sys_ds_user a,sys_user b where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+        and a.user_id = b.user_id
+    </delete>
+</mapper>
