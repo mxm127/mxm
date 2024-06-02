@@ -33,7 +33,7 @@ public class ItemSublistController extends BaseController
      * 根据作品id查询itemSubs列表
      */
     @PreAuthorize("@ss.hasPermi('biz:itemSubs:list')")
-    @PostMapping("/{itemId}")
+    @GetMapping("/{itemId}")
     public TableDataInfo list(@PathVariable Integer itemId)
     {
         startPage();

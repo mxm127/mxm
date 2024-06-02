@@ -31,8 +31,8 @@ public class ItemSublistController extends BaseController
      * 根据作品id查询itemSubs列表
      */
     @PreAuthorize("@ss.hasPermi('biz:itemSubs:list')")
-    @PostMapping("/{itemId}")
-    public TableDataInfo list(@PathVariable Integer itemId)
+    @GetMapping("/{itemId}")
+    public TableDataInfo list(@PathVariable(value = "itemId") Integer itemId)
     {
         startPage();
         List<ItemSub> list = itemSublistService.selectItemSublistByItemId(itemId);
@@ -75,17 +75,17 @@ public class ItemSublistController extends BaseController
 //        return success(itemSub);
 //    }
 //
-//    /**
-//     * 新增itemSubs
-//     */
-//    @PreAuthorize("@ss.hasPermi('biz:itemSubs:add')")
-//    @Log(title = "itemSubs", businessType = BusinessType.INSERT)
-//    @PostMapping("insert")
-//    public AjaxResult add(@RequestBody ItemSubDTO itemSubDTO)
-//    {
-//        return toAjax(itemSublistService.insertItemSublist(itemSubDTO));
-//    }
-//
+    /**
+     * 新增itemSubs
+     */
+    @PreAuthorize("@ss.hasPermi('biz:itemSubs:add')")
+    @Log(title = "itemSubs", businessType = BusinessType.INSERT)
+    @PostMapping("/insert")
+    public AjaxResult add(@RequestBody ItemSubDTO itemSubDTO)
+    {
+        return toAjax(itemSublistService.insertItemSublist(itemSubDTO));
+    }
+
 //    /**
 //     * 修改itemSubs
 //     */
@@ -113,8 +113,8 @@ public class ItemSublistController extends BaseController
      */
     @PreAuthorize("@ss.hasPermi('biz:itemSubs:remove')")
     @Log(title = "itemSubs", businessType = BusinessType.DELETE)
-    @PostMapping("/delete/{subId}")
-    public AjaxResult remove(@PathVariable Integer subId)
+    @DeleteMapping("/delete/{subId}")
+    public AjaxResult remove(@PathVariable(value = "subId") Integer subId)
     {
         Integer[] subIds = new Integer[1];
         subIds[0] = subId;
