@@ -57,9 +57,9 @@ public class DSItemsController extends BaseController
     /**
      * 获取dsitems详细信息
      */
-    @PreAuthorize("@ss.hasPermi('biz:dsitems:query')")
+//    @PreAuthorize("@ss.hasPermi('biz:dsitems:query')")
     @GetMapping(value = "/info/{itemId}")
-    public AjaxResult getInfo(@PathVariable("itemId") Long itemId)
+    public AjaxResult getInfo(@PathVariable(value = "itemId") Long itemId )
     {
 
         return success(dsItemsService.selectDSItemsByItemId(itemId));
@@ -87,28 +87,28 @@ public class DSItemsController extends BaseController
 //        return toAjax(dsItemsService.updateDSItems(dsItemsDTO));
 //    }
 
-//    /**
-//     * 删除dsitems
-//     */
-//    @PreAuthorize("@ss.hasPermi('biz:dsitems:remove')")
-//    @Log(title = "dsitems", businessType = BusinessType.DELETE)
-//	@PostMapping("/delete/{itemIds}")
-//    public AjaxResult remove(@PathVariable Long itemId)
-//    {
-//        return toAjax(dsItemsService.deleteDSItemsByItemId(itemId));
-//
-//    }
+    /**
+     * 删除dsitems
+     */
+    @PreAuthorize("@ss.hasPermi('biz:dsitems:remove')")
+    @Log(title = "dsitems", businessType = BusinessType.DELETE)
+	@DeleteMapping("/delete/{itemId}")
+    public AjaxResult remove(@PathVariable(value = "itemId") Long itemId)
+    {
+        return toAjax(dsItemsService.deleteDSItemsByItemId(itemId));
 
-//    /**
-//     * 批量删除dsitems
-//     */
-//    @PreAuthorize("@ss.hasPermi('biz:dsitems:remove')")
-//    @Log(title = "dsitems", businessType = BusinessType.DELETE)
-//    @PostMapping("/deleteBatch/")
-//    public AjaxResult removeBatch(@RequestBody Long[] itemIds)
-//    {
-//        return toAjax(dsItemsService.deleteDSItemsByItemIds(itemIds));
-//    }
+    }
+
+    /**
+     * 批量删除dsitems
+     */
+    @PreAuthorize("@ss.hasPermi('biz:dsitems:remove')")
+    @Log(title = "dsitems", businessType = BusinessType.DELETE)
+    @PostMapping("/deleteBatch")
+    public AjaxResult removeBatch(@RequestBody Long[] itemIds)
+    {
+        return toAjax(dsItemsService.deleteDSItemsByItemIds(itemIds));
+    }
 
 //    /**
 //     * 浏览量+1

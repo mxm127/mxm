@@ -65,7 +65,7 @@ public class DsItemVO {
 
     /** 所属课程 */
     @Excel(name = "所属课程")
-    private Long cource;
+    private Long course;
 
     /** $column.columnComment */
     @Excel(name = "${comment}", readConverterExp = "$column.readConverterExp()")
@@ -204,12 +204,12 @@ public class DsItemVO {
         this.classtwoName = classtwoName;
     }
 
-    public Long getCource() {
-        return cource;
+    public Long getCourse() {
+        return course;
     }
 
-    public void setCource(Long cource) {
-        this.cource = cource;
+    public void setCourse(Long course) {
+        this.course = course;
     }
 
     public String getCreateTimeLable() {

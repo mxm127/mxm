@@ -55,7 +55,7 @@ public class DSItemsServiceImpl implements IDSItemsService
     /**
      * 新增items
      * 
-     * @param dSItems items
+     * @param dsItemsDTO items
      * @return 结果
      */
     @Override
@@ -69,7 +69,7 @@ public class DSItemsServiceImpl implements IDSItemsService
     /**
      * 修改items
      * 
-     * @param dSItems items
+     * @param dsItemsDTO items
      * @return 结果
      */
     @Override

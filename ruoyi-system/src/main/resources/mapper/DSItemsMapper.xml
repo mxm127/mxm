@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="information"    column="information"    />
         <result property="title"    column="title"    />
         <result property="subTitle"    column="subTitle"    />
-        <result property="cource"    column="cource"    />
+        <result property="course"    column="course"    />
         <result property="createBy"    column="create_by"    />
         <result property="updateTime"    column="update_time"    />
         <result property="view"    column="view"    />
@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectDSItemsVo">
-        select item_id, class_type, teacher, phonenumber, entry_form, commit_time, school, information, title, subTitle, cource, create_by, update_time, view, cover, vote, status, exhibit_flag, sort_type from sys_items
+        select item_id, class_type, teacher, phonenumber, entry_form, commit_time, school, information, title, subTitle, course, create_by, update_time, view, cover, vote, status, exhibit_flag, sort_type from sys_items
     </sql>
 
     <select id="selectDSItemsList" parameterType="DSItems" resultMap="DSItemsResult">
@@ -43,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="information != null  and information != ''"> and information = #{information}</if>
             <if test="title != null  and title != ''"> and title = #{title}</if>
             <if test="subTitle != null  and subTitle != ''"> and subTitle = #{subTitle}</if>
-            <if test="cource != null "> and cource = #{cource}</if>
+            <if test="course != null "> and course = #{course}</if>
             <if test="view != null "> and view = #{view}</if>
             <if test="cover != null  and cover != ''"> and cover = #{cover}</if>
             <if test="vote != null "> and vote = #{vote}</if>
@@ -70,7 +70,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="information != null">information,</if>
             <if test="title != null">title,</if>
             <if test="subTitle != null">subTitle,</if>
-            <if test="cource != null">cource,</if>
+            <if test="course != null">course,</if>
             <if test="createBy != null">create_by,</if>
             <if test="updateTime != null">update_time,</if>
             <if test="view != null">view,</if>
@@ -90,7 +90,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="information != null">#{information},</if>
             <if test="title != null">#{title},</if>
             <if test="subTitle != null">#{subTitle},</if>
-            <if test="cource != null">#{cource},</if>
+            <if test="course != null">#{course},</if>
             <if test="createBy != null">#{createBy},</if>
             <if test="updateTime != null">#{updateTime},</if>
             <if test="view != null">#{view},</if>
@@ -117,7 +117,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="information != null">information = #{information},</if>
             <if test="title != null">title = #{title},</if>
             <if test="subTitle != null">subTitle = #{subTitle},</if>
-            <if test="cource != null">cource = #{cource},</if>
+            <if test="course != null">course = #{course},</if>
             <if test="createBy != null">create_by = #{createBy},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>
             <if test="view != null">view = #{view},</if>

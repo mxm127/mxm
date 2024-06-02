@@ -58,7 +58,7 @@ public class DSItems extends BaseEntity
 
     /** 所属课程 */
     @Excel(name = "所属课程")
-    private Long cource;
+    private Long course;
 
     /** $column.columnComment */
     @Excel(name = "${comment}", readConverterExp = "$column.readConverterExp()")
@@ -178,14 +178,14 @@ public class DSItems extends BaseEntity
         return subTitle;
     }
 
-    public void setCource(Long cource) 
+    public void setCourse(Long course)
     {
-        this.cource = cource;
+        this.course = course;
     }
 
-    public Long getCource() 
+    public Long getCourse()
     {
-        return cource;
+        return course;
     }
     public void setCreateTimeLable(String createTimeLable) 
     {
@@ -282,7 +282,7 @@ public class DSItems extends BaseEntity
             .append("information", getInformation())
             .append("title", getTitle())
             .append("subTitle", getSubTitle())
-            .append("cource", getCource())
+            .append("cource", getCourse())
             .append("createBy", getCreateBy())
             .append("updateTime", getUpdateTime())
             .append("createTimeLable", getCreateTimeLable())

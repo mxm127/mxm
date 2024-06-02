@@ -115,10 +115,9 @@ public class DSItemsController extends BaseController
      * @param itemId
      * @return
      */
-    @GetMapping("/pageview")
-    public AjaxResult pageViewAdd(@PathVariable Integer itemId){
+    @GetMapping("/pageview/{itemId}")
+    public AjaxResult pageViewAdd(@PathVariable("itemId") Integer itemId){
         return toAjax(dsItemsService.addPageView(itemId));
-
     }
 
 }

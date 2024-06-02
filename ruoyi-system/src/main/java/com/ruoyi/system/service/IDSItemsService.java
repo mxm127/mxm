@@ -31,7 +31,7 @@ public interface IDSItemsService
     /**
      * 新增items
      * 
-     * @param dSItems items
+     * @param dsItemsDTO items
      * @return 结果
      */
     public int insertDSItems(DsItemsDTO dsItemsDTO);
@@ -39,7 +39,7 @@ public interface IDSItemsService
     /**
      * 修改items
      * 
-     * @param dSItems items
+     * @param dsItemsDTO items
      * @return 结果
      */
     public int updateDSItems(DsItemsDTO dsItemsDTO);
