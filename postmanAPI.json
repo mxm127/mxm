@@ -1,0 +1,630 @@
+{
+  "info": {
+    "_postman_id": "5c6f6d4b-7615-4b91-8312-898e4a5703c0",
+    "name": "测试",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35180760"
+  },
+  "item": [
+    {
+      "name": "获取用户信息",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:8080/getInfo",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "getInfo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "分页查询作品",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjQ3NjYyMDJlLTJkOTAtNGQ0OC1hZGZlLTc0YzEwZTZlYzdjNSJ9.Q8ZyTS1zPG5J3hN_blZUPDeer2l9Xu3ySEtJf9LqmuTxZbwCtmkyuo85A_EQd_e1_LI5ct-ugYzfEkRHXdE08w"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"itemId\": 0,\r\n\"title\": \"\",\r\n\"subTitle\": \"\",\r\n\"classOne\": 0,\r\n\"classOneName\": \"\",\r\n\"classTwo\": 0,\r\n\"classTwoName\": \"\",\r\n\"school\": \"\",\r\n\"teacher\": \"\",\r\n\"mobile\": \"\",\r\n\"course\": 0,\r\n\"status\": 0,\r\n\"exhibitFlag\": 0,\r\n\"createTime\": \"\",\r\n\"createTimeLabel\": \"\",\r\n\"createBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"vote\": 0,\r\n\"view\": 0,\r\n\"cover\": \"\",\r\n\"userId\": 0,\r\n\"search\": \"\",\r\n\"sortType\": 0,\r\n\"DsItemSubList\": [\r\n{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"subId\": 0,\r\n\"itemId\": 0,\r\n\"subTitle\": \"\",\r\n\"keyWord\": \"\",\r\n\"url\": \"\",\r\n\"fileType\": 0\r\n}\r\n],\r\n\"isApprove\": \"\",\r\n\"adjudicatorId\": 0,\r\n\"adjudicator\": \"\",\r\n\"avgScore\": 0.0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/admin/biz/dsitems/list",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "biz",
+            "dsitems",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "导出作品表",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"itemId\": 0,\r\n\"title\": \"\",\r\n\"subTitle\": \"\",\r\n\"classOne\": 0,\r\n\"classOneName\": \"\",\r\n\"classTwo\": 0,\r\n\"classTwoName\": \"\",\r\n\"school\": \"\",\r\n\"teacher\": \"\",\r\n\"mobile\": \"\",\r\n\"course\": 0,\r\n\"status\": 0,\r\n\"exhibitFlag\": 0,\r\n\"createTime\": \"\",\r\n\"createTimeLabel\": \"\",\r\n\"createBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"vote\": 0,\r\n\"view\": 0,\r\n\"cover\": \"\",\r\n\"userId\": 0,\r\n\"search\": \"\",\r\n\"sortType\": 0,\r\n\"DsItemSubList\": [\r\n{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"subId\": 0,\r\n\"itemId\": 0,\r\n\"subTitle\": \"\",\r\n\"keyWord\": \"\",\r\n\"url\": \"\",\r\n\"fileType\": 0\r\n}\r\n],\r\n\"isApprove\": \"\",\r\n\"adjudicatorId\": 0,\r\n\"adjudicator\": \"\",\r\n\"avgScore\": 0.0\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/admin/biz/dsitems/export",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "biz",
+            "dsitems",
+            "export"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "新增作品",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"title\": \"我叫MT\",\r\n\"subTitle\": \"呃呃呃\",\r\n\"classType\": 2,\r\n\"school\": \"北京大学\",\r\n\"teacher\": \"刘亚鹏，杭磊\",\r\n\"phonenumber\": \"15190786729\",\r\n\"course\": 1,\r\n\"status\": 0,\r\n\"exhibitFlag\": 1,\r\n\"createTime\": \"\",\r\n\"createTimeLabel\": \"\",\r\n\"createBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"vote\": 0,\r\n\"view\": 0,\r\n\"cover\": \"\",\r\n\"userId\": 0,\r\n\"search\": \"\",\r\n\"sortType\": 0,\r\n\"DsItemSubList\": [\r\n{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"subId\": 0,\r\n\"itemId\": 0,\r\n\"subTitle\": \"\",\r\n\"keyWord\": \"\",\r\n\"url\": \"\",\r\n\"fileType\": 0\r\n}\r\n],\r\n\"isApprove\": \"\",\r\n\"adjudicatorId\": 0,\r\n\"adjudicator\": \"\",\r\n\"avgScore\": 0.0\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/User/biz/dsitems/insert",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "User",
+            "biz",
+            "dsitems",
+            "insert"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "修改作品",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"itemId\": 7,\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"title\": \"我叫MT\",\r\n\"subTitle\": \"lala\",\r\n\"classType\": 2,\r\n\"school\": \"北京大学\",\r\n\"teacher\": \"刘亚鹏，杭磊\",\r\n\"phonenumber\": \"15190786729\",\r\n\"course\": 1,\r\n\"status\": 0,\r\n\"exhibitFlag\": 1,\r\n\"createTime\": \"\",\r\n\"createTimeLabel\": \"\",\r\n\"createBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"vote\": 0,\r\n\"view\": 0,\r\n\"cover\": \"\",\r\n\"userId\": 0,\r\n\"search\": \"\",\r\n\"sortType\": 0,\r\n\"DsItemSubList\": [\r\n{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"subId\": 0,\r\n\"itemId\": 0,\r\n\"subTitle\": \"\",\r\n\"keyWord\": \"\",\r\n\"url\": \"\",\r\n\"fileType\": 0\r\n}\r\n],\r\n\"isApprove\": \"\",\r\n\"adjudicatorId\": 0,\r\n\"adjudicator\": \"\",\r\n\"avgScore\": 0.0\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/User/biz/dsitems/update",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "User",
+            "biz",
+            "dsitems",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "查看作品详情",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:8080/User/biz/dsitems/info/7",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "User",
+            "biz",
+            "dsitems",
+            "info",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "阅读数加1",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:8080/User/biz/dsitems/pageview/7",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "User",
+            "biz",
+            "dsitems",
+            "pageview",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "批量删除作品",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[4,5]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/admin/biz/dsitems/deleteBatch",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "biz",
+            "dsitems",
+            "deleteBatch"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "根据ID删除作品",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:8080/admin/biz/dsitems/delete/6",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "biz",
+            "dsitems",
+            "delete",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "根据作品Id查询作品子集",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:8080/admin/biz/itemSubs/7",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "biz",
+            "itemSubs",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "添加子作品",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"itemId\": 7,\r\n\"subTitle\": \"\",\r\n\"keyWord\": \"biaozhun\",\r\n\"url\": \"11111\",\r\n\"fileType\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/user/biz/itemSubs/insert",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "biz",
+            "itemSubs",
+            "insert"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "根据id删除子作品",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:8080/user/biz/itemSubs/delete/3",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "biz",
+            "itemSubs",
+            "delete",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "分页查询用户表",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"userId\": null,\r\n\"userType\": null,\r\n\"readFlag\": null,\r\n\"approveType\": null,\r\n\"nickName\": \"\",\r\n\"schoolName\": \"江苏大学\",\r\n\"sysUser\": {\r\n\"createBy\": \"\",\r\n\"createTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"remark\": \"\",\r\n\"params\": {\r\n\"\": {}\r\n},\r\n\"userId\": 0,\r\n\"deptId\": 0,\r\n\"userName\": \"\",\r\n\"nickName\": \"\",\r\n\"email\": \"\",\r\n\"phonenumber\": \"\",\r\n\"sex\": \"\",\r\n\"avatar\": \"\",\r\n\"password\": \"\",\r\n\"status\": \"\",\r\n\"delFlag\": \"\",\r\n\"loginIp\": \"\",\r\n\"loginDate\": \"\",\r\n\"dept\": {\r\n\"createBy\": \"\",\r\n\"createTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"remark\": \"\",\r\n\"params\": {\r\n\"\": {}\r\n},\r\n\"deptId\": 0,\r\n\"parentId\": 0,\r\n\"ancestors\": \"\",\r\n\"deptName\": \"\",\r\n\"orderNum\": 0,\r\n\"leader\": \"\",\r\n\"phone\": \"\",\r\n\"email\": \"\",\r\n\"status\": \"\",\r\n\"delFlag\": \"\",\r\n\"parentName\": \"\",\r\n\"children\": [\r\n{\r\n\"createBy\": \"\",\r\n\"createTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"remark\": \"\",\r\n\"params\": {\r\n\"\": {}\r\n},\r\n\"deptId\": 0,\r\n\"parentId\": 0,\r\n\"ancestors\": \"\",\r\n\"deptName\": \"\",\r\n\"orderNum\": 0,\r\n\"leader\": \"\",\r\n\"phone\": \"\",\r\n\"email\": \"\",\r\n\"status\": \"\",\r\n\"delFlag\": \"\",\r\n\"parentName\": \"\",\r\n\"children\": [\r\n{}\r\n]\r\n}\r\n]\r\n},\r\n\"roles\": [\r\n{\r\n\"createBy\": \"\",\r\n\"createTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"remark\": \"\",\r\n\"params\": {\r\n\"\": {}\r\n},\r\n\"roleId\": 0,\r\n\"roleName\": \"\",\r\n\"roleKey\": \"\",\r\n\"roleSort\": 0,\r\n\"dataScope\": \"\",\r\n\"menuCheckStrictly\": false,\r\n\"deptCheckStrictly\": false,\r\n\"status\": \"\",\r\n\"delFlag\": \"\",\r\n\"flag\": \"false\",\r\n\"menuIds\": [\r\n0\r\n],\r\n\"deptIds\": [\r\n0\r\n],\r\n\"permissions\": [\r\n\"\"\r\n]\r\n}\r\n],\r\n\"roleIds\": [\r\n0\r\n],\r\n\"postIds\": [\r\n0\r\n],\r\n\"roleId\": 0,\r\n\"openid\": \"\"\r\n}\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/admin/Dsuser/list",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "Dsuser",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "根据用户id查询",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/admin/Dsuser/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "Dsuser",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "评分汇总",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImNkMTExNjNjLTA0ODMtNDZhOS04MDMyLWQ1NTY4Y2JlZWVhZSJ9.dCvrPWZn1S9VykNI_UoR_A6QmPheZ950dwSeHrswk-aH3eHjIqBn4XEE6RZXy_x6LxIZ0fzkSiZVlpryAYP8LQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"itemId\": 0,\r\n\"title\": \"\",\r\n\"subTitle\": \"\",\r\n\"classOne\": 0,\r\n\"classOneName\": \"\",\r\n\"classTwo\": 0,\r\n\"classTwoName\": \"\",\r\n\"school\": \"江苏\",\r\n\"teacher\": \"\",\r\n\"mobile\": \"\",\r\n\"course\": 0,\r\n\"status\": 0,\r\n\"exhibitFlag\": 0,\r\n\"createTime\": \"\",\r\n\"createTimeLabel\": \"\",\r\n\"createBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"vote\": 0,\r\n\"view\": 0,\r\n\"cover\": \"\",\r\n\"userId\": 0,\r\n\"search\": \"\",\r\n\"sortType\": 0,\r\n\"DsItemSubList\": [\r\n{\r\n\"pageNum\": 0,\r\n\"pageSize\": 0,\r\n\"subId\": 0,\r\n\"itemId\": 0,\r\n\"subTitle\": \"\",\r\n\"keyWord\": \"\",\r\n\"url\": \"\",\r\n\"fileType\": 0\r\n}\r\n],\r\n\"isApprove\": \"\",\r\n\"adjudicatorId\": 0,\r\n\"adjudicator\": \"\",\r\n\"avgScore\": 0.0\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/admin/biz/score/itemScore",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "biz",
+            "score",
+            "itemScore"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "评审员需要评审的作品",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"scoreId\": 0,\r\n\"itemId\": 0,\r\n\"adjudicator\": \"\",\r\n\"adjudicatorId\": 0,\r\n\"dimension1\": 0.0,\r\n\"dimension2\": 0.0,\r\n\"dimension3\": 0.0,\r\n\"dimension4\": 0.0,\r\n\"dimension5\": 0.0,\r\n\"dimension6\": 0.0,\r\n\"dimension7\": 0.0,\r\n\"dimension8\": 0.0,\r\n\"total\": 0.0,\r\n\"mark\": \"\",\r\n\"createBy\": \"\",\r\n\"createTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"updateTime\": \"\",\r\n\"classType\" : \"1\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/user/biz/score/list",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "biz",
+            "score",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "新增评分",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"scoreId\": 6,\r\n\"itemId\": 7,\r\n\"adjudicator\": \"胡志微\",\r\n\"adjudicatorId\": 2,\r\n\"dimension1\": 10.0,\r\n\"dimension2\": 10.0,\r\n\"dimension3\": 10.0,\r\n\"dimension4\": 10.0,\r\n\"dimension5\": 2.0,\r\n\"dimension6\": 2.0,\r\n\"dimension7\": 2.0,\r\n\"dimension8\": 2.0,\r\n\"total\": 48.0,\r\n\"mark\": \"\",\r\n\"createBy\": \"\",\r\n\"createTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"updateTime\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/user/biz/score/add",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "biz",
+            "score",
+            "add"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "修改评分",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"id\": 6,\r\n\"itemId\": 7,\r\n\"adjudicator\": \"胡志微\",\r\n\"adjudicatorId\": 2,\r\n\"dimension1\": 10.0,\r\n\"dimension2\": 11.0,\r\n\"dimension3\": 12.0,\r\n\"dimension4\": 12.0,\r\n\"dimension5\": 4.0,\r\n\"dimension6\": 4.0,\r\n\"dimension7\": 4.0,\r\n\"dimension8\": 4.0,\r\n\"total\": 57.0,\r\n\"mark\": \"还不错\",\r\n\"createBy\": \"\",\r\n\"createTime\": \"\",\r\n\"updateBy\": \"\",\r\n\"updateTime\": \"\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/user/biz/score/edit",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "biz",
+            "score",
+            "edit"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "根据作品id获取评分详细信息",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjJkNjFkMDc4LTExNDYtNGMzMi1hOTBjLTc5NGE5NzQ0YTkxYiJ9.JdsLD-3V-7fJaZWX29GWtfR5PnY6jrDGc0hd_px9QglaARt95WY6LwvUwMF3qRl75daYjgAiIJcPNjaFZaQYdQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:8080/admin/biz/score/7",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "admin",
+            "biz",
+            "score",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
