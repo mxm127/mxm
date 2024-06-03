@@ -3,8 +3,10 @@ package com.ruoyi.system.controller.admin;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ruoyi.common.core.domain.entity.SysUser;
 import com.ruoyi.system.domain.dto.DsUserDTO;
 import com.ruoyi.system.domain.vo.DsUserVO;
+import com.ruoyi.system.service.ISysUserService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,7 @@ import com.ruoyi.system.domain.DsUser;
 import com.ruoyi.system.service.IDsUserService;
 import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.common.core.page.TableDataInfo;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * DsUserController
@@ -36,6 +39,7 @@ public class DsUserController extends BaseController
 {
     @Autowired
     private IDsUserService dsUserService;
+
 
     /**
      * 查询DsUser列表
@@ -72,6 +76,29 @@ public class DsUserController extends BaseController
         return success(dsUserService.selectDsUserById(id));
     }
 
+    /**
+     * 导入教师数据
+     * @param file
+     * @param updateSupport
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("/importData")
+    public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception
+    {
+        ExcelUtil<DsUserDTO> util = new ExcelUtil<DsUserDTO>(DsUserDTO.class);
+        List<DsUserDTO> userList = util.importExcel(file.getInputStream());
+        String operName = getUsername();
+        String message = dsUserService.importDsUser(userList, updateSupport, operName);
+        return success(message);
+    }
+
+    @PostMapping("/importTemplate")
+    public void importTemplate(HttpServletResponse response)
+    {
+        ExcelUtil<DsUserVO> util = new ExcelUtil<DsUserVO>(DsUserVO.class);
+        util.importTemplateExcel(response, "用户数据");
+    }
     /**
      * 新增DsUser
      */

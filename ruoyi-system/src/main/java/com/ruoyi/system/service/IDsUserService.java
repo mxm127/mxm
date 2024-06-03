@@ -61,5 +61,19 @@ public interface IDsUserService
      */
     public int deleteDsUserById(Long id);
 
+    /**
+     * 根据用户id查询教师相关信息
+     * @param userId
+     * @return
+     */
     public DsUser selectDsUserByUserId(Long userId);
+
+    /**
+     * 导入教师相关信息
+     * @param userList
+     * @param updateSupport
+     * @param operName
+     * @return
+     */
+    String importDsUser(List<DsUserDTO> userList, boolean updateSupport, String operName);
 }
